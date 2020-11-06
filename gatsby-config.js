@@ -32,16 +32,19 @@ module.exports = {
       resolve: "gatsby-source-wordpress",
       options: {
         // I have created a dummy site for us to use with the plugins we discussed
-        baseUrl: "gatsbypress.iamtimsmith.com",
-        protocol: "https",
+        baseUrl: "adnansblog.local/",
+        protocol: "http",
         hostingWPCOM: false,
+        // useACF: false,
+        // restApiRoutePrefix: "wp-json",
+
         // We will be using some advanced custom fields
         useACF: true,
         acfOptionPageIds: [],
         verboseOutput: false,
         perPage: 100,
         searchAndReplaceContentUrls: {
-          sourceUrl: "https://gatsbypress.iamtimsmith.com",
+          sourceUrl: "http://adnansblog.local/",
           replacementUrl: "https://localhost:8000",
         },
         // Set how many simultaneous requests are sent at once.
@@ -64,6 +67,18 @@ module.exports = {
       },
     },
     `gatsby-plugin-sitemap`,
+
+    {
+      resolve: "gatsby-source-graphql",
+      options: {
+        // Arbitrary name for the remote schema Query type
+        typeName: "SWAPI",
+        // Field under which the remote schema will be accessible. You'll use this in your Gatsby query
+        fieldName: "swapi",
+        // Url to query from
+        url: "https://swapi-graphql.netlify.app/.netlify/functions/index",
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
