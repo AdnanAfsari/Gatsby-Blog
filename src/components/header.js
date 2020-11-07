@@ -55,20 +55,22 @@ const Header = () => (
               data.allWordpressWpApiMenusMenusItems.edges[0] &&
               data.allWordpressWpApiMenusMenusItems.edges[0].node &&
               data.allWordpressWpApiMenusMenusItems.edges[0].node.items &&
-              data.allWordpressWpApiMenusMenusItems.edges[0].node.items.map(item => (
-              <li key={item.object_slug} style={{ margin: `0 10px` }}>
-                <Link
-                  to={`/${item.object_slug}`}
-                  style={{
-                    color: `white`,
-                    textDecoration: `none`,
-                    fontFamily: `sans-serif`,
-                  }}
-                >
-                  {item.title}
-                </Link>
-              </li>
-            ))}
+              data.allWordpressWpApiMenusMenusItems.edges[0].node.items.map(
+                item => (
+                  <li key={item.object_slug} style={{ margin: `0 10px` }}>
+                    <Link
+                      to={`/${item.object_slug}`}
+                      style={{
+                        color: `white`,
+                        textDecoration: `none`,
+                        fontFamily: `sans-serif`,
+                      }}
+                    >
+                      {item.title}
+                    </Link>
+                  </li>
+                )
+              )}
           </ul>
         </div>
       </header>
