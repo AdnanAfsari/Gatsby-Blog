@@ -78,7 +78,24 @@ module.exports = {
         // Url to query from
         url: "https://swapi-graphql.netlify.app/.netlify/functions/index",
       },
+		},
+		{
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Roboto`,
+						subsets: [`latin`],
+						variants: [`700`]
+          },
+          {
+            family: `Merriweather`,
+            variants: [`400`]
+          },
+        ],
+      },
     },
+		
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

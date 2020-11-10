@@ -7,28 +7,54 @@ import SEO from "../components/seo"
 
 const IndexPage = ({ data }) => (
   <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <ul style={{ listStyle: "none" }}>
+		<SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+		
+    <ul style={{ listStyle: "none", }}>
       {data.allWordpressPost.edges.map(post => (
-        <li style={{ padding: "20px 0", borderBottom: "1px solid #ccc" }}>
-          <Link
+				<li
+					style={{
+            padding: "20px 0",
+            borderBottom: "1px solid #ccc",
+          }}>
+					<Link
+						style={{
+              display: "flex",
+              color: "black",
+              textDecoration: "none",
+            }}
             to={`/post/${post.node.slug}`}
-            style={{ display: "flex", color: "black", textDecoration: "none" }}
           >
-            <Img
+						<Img
+							style={{
+                width: "25%",
+                marginRight: "20px",
+              }}
               sizes={post.node.acf.feat_img.localFile.childImageSharp.sizes}
               alt={post.node.title}
-              style={{ width: "25%", marginRight: 20 }}
             />
-            <div style={{ width: "75%" }}>
-              <h3
+            <div style={{ width: "75%", }}>
+							<h3
+								style={{
+                  marginBottom: 0,
+                  fontFamily: "Roboto",
+                  fontSize: "40px",
+
+                }}
                 dangerouslySetInnerHTML={{ __html: post.node.title }}
-                style={{ marginBottom: 0 }}
               />
-              <p style={{ margin: 0, color: "grey" }}>
+							<p
+								style={{
+                  margin: 0,
+                  color: "grey",
+                  fontFamily: "Merriweather",
+                }}>
                 Written by {post.node.author.name} on {post.node.date}
               </p>
-              <div dangerouslySetInnerHTML={{ __html: post.node.excerpt }} />
+							<div
+								style={{
+                  fontFamily: "Merriweather",
+                }}
+								dangerouslySetInnerHTML={{ __html: post.node.excerpt }} />
             </div>
           </Link>
         </li>
@@ -56,9 +82,7 @@ export const query = graphql`
               localFile {
                 childImageSharp {
                   sizes(maxWidth: 600) {
-
-                    src
-
+                    ...GatsbyImageSharpSizes
                   }
                 }
               }
