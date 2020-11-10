@@ -30,14 +30,14 @@ const Header = () => (
         <div
           style={{
             margin: `0 auto`,
-            maxWidth: 960,
+            maxWidth: "70%",
             padding: `1.45rem 1.0875rem`,
             display: `flex`,
             justifyContent: `space-between`,
             alignItems: `center`,
           }}
         >
-          <h1 style={{ margin: 0 }}>
+          <h1 style={{ margin: 0, }}>
             <Link
               to="/"
               style={{
@@ -48,7 +48,7 @@ const Header = () => (
               {data.wordpressSiteMetadata.name}
             </Link>
           </h1>
-          <ul style={{ listStyle: `none`, display: `flex`, margin: 0 }}>
+          <ul style={{ listStyle: `none`, display: `flex`, margin: 0, }}>
             {data &&
               data.allWordpressWpApiMenusMenusItems &&
               data.allWordpressWpApiMenusMenusItems.edges &&
@@ -57,7 +57,7 @@ const Header = () => (
               data.allWordpressWpApiMenusMenusItems.edges[0].node.items &&
               data.allWordpressWpApiMenusMenusItems.edges[0].node.items.map(
                 item => (
-                  <li key={item.object_slug} style={{ margin: `0 10px` }}>
+                  <li key={item.object_slug} style={{ margin: `0 10px`, }}>
                     <Link
                       to={`/${item.object_slug}`}
                       style={{
