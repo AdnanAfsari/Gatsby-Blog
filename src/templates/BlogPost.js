@@ -17,10 +17,10 @@ const BlogPostTemplate = ({ data }) => (
     <Img
       sizes={data.wordpressPost.acf.feat_img.localFile.childImageSharp.sizes}
       alt={data.wordpressPost.title}
-      style={{ maxHeight: 450 }}
+      style={{ maxHeight: "450px", }}
     />
     <div
-      style={{ marginTop: 20 }}
+      style={{ marginTop: "20px", }}
       dangerouslySetInnerHTML={{ __html: data.wordpressPost.content }}
     />
   </Layout>
