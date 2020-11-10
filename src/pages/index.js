@@ -37,7 +37,7 @@ const IndexPage = ({ data }) => (
 								style={{
                   marginBottom: 0,
                   fontFamily: "Roboto",
-                  fontSize: "40px",
+                  fontSize: "2.4rem",
 
                 }}
                 dangerouslySetInnerHTML={{ __html: post.node.title }}
