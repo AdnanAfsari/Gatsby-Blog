@@ -34,8 +34,8 @@ const IndexPage = ({ data }) => (
 							<h3
 								style={{
                   marginBottom: 0,
-                  fontFamily: "Roboto",
-                  fontSize: "2rem",
+                  fontFamily: "Inter",
+                  fontSize: "1.5rem",
 
                 }}
                 dangerouslySetInnerHTML={{ __html: post.node.title }}

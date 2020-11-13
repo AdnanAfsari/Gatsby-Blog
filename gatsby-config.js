@@ -79,20 +79,24 @@ module.exports = {
         url: "https://swapi-graphql.netlify.app/.netlify/functions/index",
       },
 		},
+		
 		{
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-webfonts`,
       options: {
-        fonts: [
-          {
-            family: `Roboto`,
-						subsets: [`latin`],
-						variants: [`700`]
-          },
-          {
-            family: `Merriweather`,
-            variants: [`400`]
-          },
-        ],
+        fonts: {
+          google: [
+            {
+              family: 'Inter',
+              variants: ['700'],
+              fontDisplay: 'block',
+						},
+						{
+            	family: `Merriweather`,
+            	variants: [`400`]
+          	},
+          ],
+        },
+        //usePreload: true,
       },
     },
 		{
