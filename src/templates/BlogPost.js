@@ -1,12 +1,11 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
-import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const BlogPostTemplate = ({ data }) => (
-  <Layout>
-    <SEO
+  <React.Fragment>
+		<SEO
       title={data.wordpressPost.title}
       description={data.wordpressPost.excerpt}
     />
@@ -22,8 +21,8 @@ const BlogPostTemplate = ({ data }) => (
     <div
       style={{ marginTop: "20px", }}
       dangerouslySetInnerHTML={{ __html: data.wordpressPost.content }}
-    />
-  </Layout>
+		/>
+	</React.Fragment>  
 )
 export default BlogPostTemplate
 

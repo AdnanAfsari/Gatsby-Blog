@@ -1,12 +1,10 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
-
-import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const IndexPage = ({ data }) => (
-  <Layout>
+  <React.Fragment>
 		<SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
 		
     <ul style={{ listStyle: "none", }}>
@@ -60,7 +58,7 @@ const IndexPage = ({ data }) => (
         </li>
       ))}
     </ul>
-  </Layout>
+  </React.Fragment>
 )
 
 export default IndexPage
