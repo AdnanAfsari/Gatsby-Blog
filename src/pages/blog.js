@@ -16,7 +16,6 @@ const BlogPage = ({ data }) => (
       margin: "0 auto",
       maxWidth: "75%",
       padding: `0 1.0875rem 1.45rem`,
-      textAlign: "center",
     }}
 		>
 			<ul
@@ -28,39 +27,47 @@ const BlogPage = ({ data }) => (
 				<li
 					style={{
             padding: "20px 0",
-            borderBottom: "1px solid #ccc",
+            borderBottom: "1px solid #ccc"
+            // alignItems: 'center',
           }}>
 					<Link
 						style={{
               color: "black",
               textDecoration: "none",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
             }}
             to={`/post/${post.node.slug}`}
-          >
-						<Img
-							style={{
-                width: "100%",
-                marginRight: "20px",
-              }}
-              sizes={post.node.acf.feat_img.localFile.childImageSharp.sizes}
-              alt={post.node.title}
-            />
-            <div style={{ width: "100%", }}>
+					>
+						<div style={{alignSelf: "center", textAlign: "center",}}>
 							<Heading
 								style={{
                   marginBottom: 0,
-                  fontSize: "1.5rem",
-
+                  fontSize: "3.5rem",
+                  alignSelf: "center",
                 }}
                 dangerouslySetInnerHTML={{ __html: post.node.title }}
               />
 							<p
 								style={{
-                  margin: 0,
+                  marginTop: "45px",
                   color: "#6d6d6d",
+                  fontFamily: "Inter",
+                  fontWeight: "500",
+                  marginBottom: "83px",
                 }}>
-								<BlogUser/> {post.node.author.name} <Calender /> {post.node.date}
+								<BlogUser style={{marginRight: "10px",}}/>By<span> {post.node.author.name} </span><Calender style={{marginRight: "5px", marginLeft: "40px",}} /> <span>{post.node.date}</span>
               </p>
+						</div>
+						<Img
+							style={{
+                width: "100%",
+              }}
+              sizes={post.node.acf.feat_img.localFile.childImageSharp.sizes}
+              alt={post.node.title}
+            />
+            <div style={{ width: "50%", alignSelf: "center",}}>
 							<div
 								dangerouslySetInnerHTML={{ __html: post.node.excerpt }} />
             </div>
@@ -90,7 +97,7 @@ export const query = graphql`
             feat_img {
               localFile {
                 childImageSharp {
-                  sizes(maxWidth: 600) {
+                  sizes(maxWidth: 1000) {
                     ...GatsbyImageSharpSizes
                   }
                 }

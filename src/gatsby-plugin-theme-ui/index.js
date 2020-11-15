@@ -1,7 +1,7 @@
 export default {
   fonts: {
     body: "Merriweather, sans-serif",
-    heading: "Inter, sans-serif",
+		heading: "Inter, sans-serif",
   },
   fontWeights: {
     body: 400,
