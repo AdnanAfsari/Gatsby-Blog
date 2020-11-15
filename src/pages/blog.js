@@ -2,6 +2,9 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import SEO from "../components/seo"
+import BlogUser from "../images/BlogUser"
+import Calender from "../images/Calender"
+
 
 const BlogPage = ({ data }) => (
   <React.Fragment>
@@ -46,7 +49,7 @@ const BlogPage = ({ data }) => (
                   color: "grey",
                   fontFamily: "Merriweather",
                 }}>
-                Written by {post.node.author.name} on {post.node.date}
+								<BlogUser/> {post.node.author.name} <Calender /> {post.node.date}
               </p>
 							<div
 								style={{
