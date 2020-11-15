@@ -1,3 +1,5 @@
+/** @jsx jsx */
+import { jsx, Box, Flex, Heading } from 'theme-ui';
 import React from "react"
 import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
@@ -5,12 +7,23 @@ import SEO from "../components/seo"
 import BlogUser from "../images/BlogUser"
 import Calender from "../images/Calender"
 
-
 const BlogPage = ({ data }) => (
-  <React.Fragment>
-		<SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+	<React.Fragment>
 		
-    <ul style={{ listStyle: "none", }}>
+		<SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+		<div
+			style={{
+      margin: "0 auto",
+      maxWidth: "75%",
+      padding: `0 1.0875rem 1.45rem`,
+      textAlign: "center",
+    }}
+		>
+			<ul
+				style={{
+          listStyle: "none",
+
+        }}>
       {data.allWordpressPost.edges.map(post => (
 				<li
 					style={{
@@ -19,7 +32,6 @@ const BlogPage = ({ data }) => (
           }}>
 					<Link
 						style={{
-              display: "flex",
               color: "black",
               textDecoration: "none",
             }}
@@ -27,17 +39,16 @@ const BlogPage = ({ data }) => (
           >
 						<Img
 							style={{
-                width: "25%",
+                width: "100%",
                 marginRight: "20px",
               }}
               sizes={post.node.acf.feat_img.localFile.childImageSharp.sizes}
               alt={post.node.title}
             />
-            <div style={{ width: "75%", }}>
-							<h3
+            <div style={{ width: "100%", }}>
+							<Heading
 								style={{
                   marginBottom: 0,
-                  fontFamily: "Inter",
                   fontSize: "1.5rem",
 
                 }}
@@ -56,7 +67,8 @@ const BlogPage = ({ data }) => (
           </Link>
         </li>
       ))}
-    </ul>
+			</ul>
+		</div>
   </React.Fragment>
 )
 
