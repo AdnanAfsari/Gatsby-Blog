@@ -46,18 +46,11 @@ const BlogPage = ({ data }) => (
 							<p
 								style={{
                   margin: 0,
-                  color: "grey",
-                  fontFamily: "Merriweather",
+                  color: "#6d6d6d",
                 }}>
-								<BlogUser
-									style={{
-                    color: "grey !important",
-                  }} /> {post.node.author.name} <Calender /> {post.node.date}
+								<BlogUser/> {post.node.author.name} <Calender /> {post.node.date}
               </p>
 							<div
-								style={{
-                  fontFamily: "Merriweather",
-                }}
 								dangerouslySetInnerHTML={{ __html: post.node.excerpt }} />
             </div>
           </Link>

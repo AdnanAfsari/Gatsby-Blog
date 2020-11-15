@@ -5,7 +5,8 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
+		`gatsby-plugin-react-helmet`,
+		`gatsby-plugin-theme-ui`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -104,7 +105,8 @@ module.exports = {
       options: {
         component: require.resolve(`./src/components/Layout/index.js`),
       },
-    },
+		},
+		
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
