@@ -49,7 +49,10 @@ const BlogPage = ({ data }) => (
                   color: "grey",
                   fontFamily: "Merriweather",
                 }}>
-								<BlogUser/> {post.node.author.name} <Calender /> {post.node.date}
+								<BlogUser
+									style={{
+                    color: "grey !important",
+                  }} /> {post.node.author.name} <Calender /> {post.node.date}
               </p>
 							<div
 								style={{
