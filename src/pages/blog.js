@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Box, Flex, Heading } from 'theme-ui';
+import { jsx, Heading } from 'theme-ui';
 import React from "react"
 import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
@@ -8,8 +8,8 @@ import BlogUser from "../images/BlogUser"
 import Calender from "../images/Calender"
 
 const BlogPage = ({ data }) => (
+	
 	<React.Fragment>
-		
 		<SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
 		<div
 			style={{
@@ -27,8 +27,7 @@ const BlogPage = ({ data }) => (
 				<li
 					style={{
             padding: "20px 0",
-            borderBottom: "1px solid #ccc"
-            // alignItems: 'center',
+            borderBottom: "1px solid #ccc",
           }}>
 					<Link
 						style={{
@@ -63,14 +62,15 @@ const BlogPage = ({ data }) => (
 						<Img
 							style={{
                 width: "100%",
+                marginBottom: "100px",
               }}
               sizes={post.node.acf.feat_img.localFile.childImageSharp.sizes}
               alt={post.node.title}
             />
-            <div style={{ width: "50%", alignSelf: "center",}}>
-							<div
+            <article style={{ width: "60%", alignSelf: "center", fontSize: "2rem", lineHeight: 1.6, letterSpacing: "normal",}}>
+							<article className="Article"
 								dangerouslySetInnerHTML={{ __html: post.node.excerpt }} />
-            </div>
+            </article>
           </Link>
         </li>
       ))}
