@@ -66,7 +66,7 @@ const BlogPage = ({ data }) => (
                 height: "600px",
                 marginBottom: "100px",
               }}
-              sizes={post.node.acf.feat_img.localFile.childImageSharp.sizes}
+              fluid={post.node.acf.feat_img.localFile.childImageSharp.fluid}
               alt={post.node.title}
             />
             <article style={{ width: "60%", alignSelf: "center", fontSize: "2rem", lineHeight: 1.6, letterSpacing: "normal",}}>
@@ -99,8 +99,8 @@ export const query = graphql`
             feat_img {
               localFile {
                 childImageSharp {
-                  sizes(maxWidth: 1000) {
-                    ...GatsbyImageSharpSizes
+                  fluid(maxWidth: 1000) {
+                    ...GatsbyImageSharpFluid
                   }
                 }
               }
