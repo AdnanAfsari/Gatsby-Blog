@@ -36,7 +36,8 @@ const BlogPostTemplate = ({ data }) => (
             fontSize: "3.5rem",
             alignSelf: "center",
           }}
-            dangerouslySetInnerHTML={{ __html: data.wordpressPost.title}}/>
+            dangerouslySetInnerHTML={{ __html: data.wordpressPost.title}}
+              />
 							<p
 								style={{
                 marginTop: "45px",
