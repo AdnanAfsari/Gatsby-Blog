@@ -62,6 +62,7 @@ const BlogPage = ({ data }) => (
 						<Img
 							style={{
                 width: "100%",
+                height: "600px",
                 marginBottom: "100px",
               }}
               sizes={post.node.acf.feat_img.localFile.childImageSharp.sizes}
