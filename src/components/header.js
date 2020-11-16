@@ -8,14 +8,10 @@ const Header = () => (
         wordpressSiteMetadata {
           name
         }
-        allWordpressWpApiMenusMenusItems {
-          edges {
-            node {
-              items {
-                title
-                object_slug
-              }
-            }
+        wordpressWpApiMenusMenusItems(name: { eq: "Main Menu" }) {
+          items {
+            title
+            object_slug
           }
         }
       }
@@ -49,28 +45,20 @@ const Header = () => (
             </Link>
           </h1>
           <ul style={{ listStyle: `none`, display: `flex`, margin: 0, }}>
-            {data &&
-              data.allWordpressWpApiMenusMenusItems &&
-              data.allWordpressWpApiMenusMenusItems.edges &&
-              data.allWordpressWpApiMenusMenusItems.edges[0] &&
-              data.allWordpressWpApiMenusMenusItems.edges[0].node &&
-              data.allWordpressWpApiMenusMenusItems.edges[0].node.items &&
-              data.allWordpressWpApiMenusMenusItems.edges[0].node.items.map(
-                item => (
-                  <li key={item.object_slug} style={{ margin: `0 10px`, }}>
-                    <Link
-                      to={`/${item.object_slug}`}
-                      style={{
-                        color: `white`,
-                        textDecoration: `none`,
-                        fontFamily: `sans-serif`,
-                      }}
-                    >
-                      {item.title}
-                    </Link>
-                  </li>
-                )
-              )}
+            {data.wordpressWpApiMenusMenusItems.items.map(item => (
+              <li key={item.object_slug} style={{ margin: `0 10px`, }}>
+                <Link
+                  to={`/${item.object_slug}`}
+                  style={{
+                    color: `white`,
+                    textDecoration: `none`,
+                    fontFamily: `sans-serif`,
+                  }}
+                >
+                  {item.title}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
       </header>
