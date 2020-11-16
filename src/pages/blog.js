@@ -25,6 +25,7 @@ const BlogPage = ({ data }) => (
         }}>
       {data.allWordpressPost.edges.map(post => (
 				<li
+					key={Math.floor((Math.random() * 1000) + 1)}
 					style={{
             padding: "20px 0",
             borderBottom: "1px solid #ccc",
