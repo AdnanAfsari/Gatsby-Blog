@@ -18,18 +18,14 @@ const BlogPage = ({ data }) => (
       padding: `0 1.0875rem 1.45rem`,
     }}
 		>
-			<ul
-				style={{
-          listStyle: "none",
-
-        }}>
+			<ul style={{listStyle: "none",}}>
       {data.allWordpressPost.edges.map(post => (
-				<li
-					key={Math.floor((Math.random() * 1000) + 1)}
+				<li key={post.node.title}
 					style={{
             padding: "20px 0",
             borderBottom: "1px solid #ccc",
-          }}>
+          }}
+				>
 					<Link
 						style={{
               color: "black",
@@ -56,7 +52,8 @@ const BlogPage = ({ data }) => (
                   fontFamily: "Inter",
                   fontWeight: "500",
                   marginBottom: "83px",
-                }}>
+                }}
+							>
 								<BlogUser style={{marginRight: "10px",}}/>By<span> {post.node.author.name} </span><Calender style={{marginRight: "5px", marginLeft: "40px",}} /> <span>{post.node.date}</span>
               </p>
 						</div>
@@ -69,7 +66,15 @@ const BlogPage = ({ data }) => (
               fluid={post.node.acf.feat_img.localFile.childImageSharp.fluid}
               alt={post.node.title}
             />
-            <article style={{ width: "60%", alignSelf: "center", fontSize: "2rem", lineHeight: 1.6, letterSpacing: "normal",}}>
+						<article
+							style={{
+                width: "60%",
+                alignSelf: "center",
+                fontSize: "2rem",
+                lineHeight: 1.6,
+                letterSpacing: "normal",
+              }}
+						>
 							<article className="Article"
 								dangerouslySetInnerHTML={{ __html: post.node.excerpt }} />
             </article>

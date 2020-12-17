@@ -19,7 +19,7 @@ const Header = () => (
     render={data => (
       <header
         style={{
-          background: `rebeccapurple`,
+          background: '#fff',
           marginBottom: `1.45rem`,
         }}
       >
@@ -31,28 +31,35 @@ const Header = () => (
             display: `flex`,
             justifyContent: `space-between`,
             alignItems: `center`,
+            fontFamily: `Inter`,
           }}
         >
           <h1 style={{ margin: 0, }}>
             <Link
               to="/"
               style={{
-                color: `white`,
+                color: `#e22658`,
                 textDecoration: `none`,
               }}
             >
               {data.wordpressSiteMetadata.name}
             </Link>
           </h1>
-          <ul style={{ listStyle: `none`, display: `flex`, margin: 0, }}>
+					<ul
+						style={{
+              listStyle: `none`,
+              display: `flex`,
+              margin: 0,
+            }}
+					>
             {data.wordpressWpApiMenusMenusItems.items.map(item => (
               <li key={item.object_slug} style={{ margin: `0 10px`, }}>
                 <Link
                   to={`/${item.object_slug}`}
                   style={{
-                    color: `white`,
+                    color: `#e22658`,
                     textDecoration: `none`,
-                    fontFamily: `sans-serif`,
+                    textTransform: 'uppercase',
                   }}
                 >
                   {item.title}
